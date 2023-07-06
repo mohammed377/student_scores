@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student grades</title>
+    <link href="{% static 'styles.css' %}" rel="stylesheet">
+
+</head>
+<body>
+            <div class="form-container">
+
+            <form method="GET">
+                <input type="text" id="student-search" name="search" placeholder="رقم الجلوس او الأسم">     
+
+                </form>
+<!--                <a href="{% url 'home' %}">Reset</a>-->
+
+            </div>
+<div class="students-container">
+    
+    <h4>Total {{count}} students</h4>
+    <table id="student-table">
+
+     <tr>
+        <th>الدرجة (من 1500)</th>
+       <th>اسم الطالب</th>
+       <th>رقم الجلوس</th>     
+     </tr>
+     {%for grade in grades%}
+     <tr>    
+        <td>{{grade.total_grade}}</td>    
+       <td>{{grade.name}}</td>     
+       <td>{{grade.student_id}}</td>        
+        </tr>
+    {%endfor%}
+ 
+    </table>
+</div>
+
+        <script type="text/javascript" src="{% static 'index.js'%}"></script>
+  </body>
+</html>
