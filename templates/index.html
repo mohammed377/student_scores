@@ -29,14 +29,14 @@
        <th>رقم الجلوس</th>    
        <td></td> 
      </tr>
-     {%for grade in grades%}
+     {% for rank, grade in ranked_grades %}
      <tr>   
         
         <td>{{grade.total_grade}}</td>    
        <td>{{grade.name}}</td>     
        <td>{{grade.student_id}}</td>  
-       <td>{{ forloop.counter }}</td>
-    </tr>
+       <td>{{ rank }}</td>   
+        </tr>
     {%endfor%}
  
     </table>
